@@ -1,13 +1,11 @@
 <%= fetch(:logrotate_log_path) %>/*.log {
+    su <%= fetch(:logrotate_user) %> <%= fetch(:logrotate_group) %>
     <%= fetch(:logrotate_interval) %>
     rotate <%= fetch(:logrotate_logs_keep) %>
-
     missingok
-    compress
-    delaycompress
+    nocompress
     notifempty
     copytruncate
-    dateext dateformat -%Y%m%d%H
-
-    su <%= fetch(:logrotate_user) %> <%= fetch(:logrotate_group) %>
+    dateext
+    olddir <%= fetch(:logrotate_log_path) %>/archive
 }
