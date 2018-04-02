@@ -5,7 +5,7 @@ require 'capistrano/logrotate/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-logrotate"
-  spec.version       = Capistrano::Logrotate::VERSION
+  spec.version       = "1.0.0"
   spec.authors       = ["Jun Lin"]
   spec.email         = ["linjunpop@gmail.com"]
 
